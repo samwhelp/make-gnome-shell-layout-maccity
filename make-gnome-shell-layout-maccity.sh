@@ -188,21 +188,21 @@ sys_theme_install_colloid_gtk_theme_via_wget_archive () {
 	fi
 
 
-	wget -c 'https://github.com/vinceliuice/Colloid-gtk-theme/archive/refs/heads/master.tar.gz' -O '/tmp/Colloid-gtk-theme-master.tar.gz'
+	wget -c 'https://github.com/vinceliuice/Colloid-gtk-theme/archive/refs/heads/main.tar.gz' -O '/tmp/Colloid-gtk-theme-main.tar.gz'
 
 
 
 
 	cd /tmp
 
-	tar xf Colloid-gtk-theme-master.tar.gz
+	tar xf Colloid-gtk-theme-main.tar.gz
 
 	cd "${OLDPWD}"
 
 
 
 
-	cd /tmp/Colloid-gtk-theme-master
+	cd /tmp/Colloid-gtk-theme-main
 
 	./install.sh --theme all
 
@@ -256,21 +256,21 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 	fi
 
 
-	wget -c 'https://github.com/vinceliuice/Colloid-icon-theme/archive/refs/heads/master.tar.gz' -O '/tmp/Colloid-icon-theme-master.tar.gz'
+	wget -c 'https://github.com/vinceliuice/Colloid-icon-theme/archive/refs/heads/main.tar.gz' -O '/tmp/Colloid-icon-theme-main.tar.gz'
 
 
 
 
 	cd /tmp
 
-	tar xf Colloid-icon-theme-master.tar.gz
+	tar xf Colloid-icon-theme-main.tar.gz
 
 	cd "${OLDPWD}"
 
 
 
 
-	cd /tmp/Colloid-icon-theme-master
+	cd /tmp/Colloid-icon-theme-main
 
 	./install.sh --theme all
 
@@ -279,7 +279,7 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 
 
 
-	cd /tmp/Colloid-icon-theme-master/cursors
+	cd /tmp/Colloid-icon-theme-main/cursors
 
 	./install.sh
 
@@ -797,7 +797,7 @@ dconf load / << __EOF__
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Colloid-Dark'
-icon-theme='Colloid-dark'
+icon-theme='Colloid-Dark'
 cursor-theme='Colloid-dark-cursors'
 cursor-size=24
 
@@ -1300,7 +1300,7 @@ menu-item-grid-icon-size='Default'
 menu-item-icon-size='Large'
 menu-layout='Whisker'
 override-menu-theme=false
-position-in-panel='Center'
+position-in-panel='Left'
 prefs-visible-page=0
 searchbar-default-top-location='Bottom'
 show-activities-button=true
