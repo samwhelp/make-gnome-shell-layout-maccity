@@ -32,6 +32,15 @@ REF_MASTER_STYLE="${REF_MASTER_STYLE:=$DEFAULT_MASTER_STYLE}"
 
 
 ##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Portal / Style
 ##
 
@@ -40,6 +49,15 @@ portal_gnome_shell_style_install () {
 	echo portal_gnome_shell_style_install
 
 }
+
+
+
+
+##
+##
+################################################################################
+##
+##
 
 
 
