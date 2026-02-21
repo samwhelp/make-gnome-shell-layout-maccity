@@ -135,6 +135,7 @@ portal_gnome_shell_layout_install () {
 
 	mod_gnome_shell_layout_install_postrun
 
+	return 0
 }
 
 

@@ -56,6 +56,7 @@ portal_gnome_shell_keybind_install () {
 
 	mod_gnome_shell_keybind_config_install
 
+	return 0
 }
 
 
