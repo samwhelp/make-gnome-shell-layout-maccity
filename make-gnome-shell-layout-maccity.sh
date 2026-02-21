@@ -299,6 +299,12 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 sys_theme_install_wallpaper () {
 
 
+	## config via dconf
+	dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpeg'"
+	dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
+	dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+
+
 	if [ -e "/usr/share/backgrounds/MacTahoe-Dark.jpeg" ]; then
 		return 0
 	fi
@@ -326,14 +332,9 @@ sys_theme_install_wallpaper () {
 
 
 	sudo ln -sf MacTahoe-Dark.jpeg next.jpeg
-	sudo ln -sf next.png default.jpeg
-	sudo ln -sf next.png default-login.jpeg
-	sudo ln -sf next.png default-grub.jpeg
-
-
-	dconf write /org/gnome/desktop/background/picture-uri "'default.jpeg'"
-	dconf write /org/gnome/desktop/background/picture-uri-dark "'default.jpeg'"
-	dconf write /org/gnome/desktop/screensaver/picture-uri "'default-login.jpeg'"
+	sudo ln -sf next.jpeg default.jpeg
+	sudo ln -sf next.jpeg default-login.jpeg
+	sudo ln -sf next.jpeg default-grub.jpeg
 
 
 	cd "${OLDPWD}"
