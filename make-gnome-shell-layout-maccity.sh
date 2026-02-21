@@ -145,6 +145,8 @@ sys_package_remove () {
 
 mod_theme_master_install () {
 
+	sys_theme_install_wallpaper
+
 	sys_theme_install_colloid_gtk_theme
 
 	sys_theme_install_colloid_icon_theme
@@ -282,6 +284,57 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 	cd /tmp/Colloid-icon-theme-main/cursors
 
 	./install.sh
+
+	cd "${OLDPWD}"
+
+}
+
+
+
+
+##
+## ## Model / Wallpaper
+##
+
+sys_theme_install_wallpaper () {
+
+
+	if [ -e "/usr/share/backgrounds/Fluent-building-night.png" ]; then
+		return 0
+	fi
+
+
+	echo
+	echo sudo mkdir -p "/usr/share/backgrounds"
+	echo
+	sudo mkdir -p "/usr/share/backgrounds"
+
+
+	cd "/usr/share/backgrounds"
+
+
+	echo
+	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/MacTahoe-kde/refs/heads/main/wallpapers/MacTahoe-Dark/contents/images/3840x2160.jpeg" -O "./MacTahoe-Dark.jpeg"
+	echo
+	sudo wget -c "https://raw.githubusercontent.com/vinceliuice/MacTahoe-kde/refs/heads/main/wallpapers/MacTahoe-Dark/contents/images/3840x2160.jpeg" -O "./MacTahoe-Dark.jpeg"
+
+
+	echo
+	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/MacTahoe-kde/refs/heads/main/wallpapers/MacTahoe-Light/contents/images/3840x2160.jpeg" -O "./MacTahoe-Light.jpeg"
+	echo
+	sudo wget -c "https://raw.githubusercontent.com/vinceliuice/MacTahoe-kde/refs/heads/main/wallpapers/MacTahoe-Light/contents/images/3840x2160.jpeg" -O "./MacTahoe-Light.jpeg"
+
+
+	sudo ln -sf MacTahoe-Dark.jpeg next.jpeg
+	sudo ln -sf next.png default.jpeg
+	sudo ln -sf next.png default-login.jpeg
+	sudo ln -sf next.png default-grub.jpeg
+
+
+	dconf write /org/gnome/desktop/background/picture-uri "'default.jpeg'"
+	dconf write /org/gnome/desktop/background/picture-uri-dark "'default.jpeg'"
+	dconf write /org/gnome/desktop/screensaver/picture-uri "'default-login.jpeg'"
+
 
 	cd "${OLDPWD}"
 
@@ -821,12 +874,12 @@ dconf load / << __EOF__
 
 [org/gnome/desktop/background]
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/default.png'
-picture-uri-dark='file:///usr/share/backgrounds/default.png'
+picture-uri='file:///usr/share/backgrounds/default.jpg'
+picture-uri-dark='file:///usr/share/backgrounds/default.jpg'
 
 
 [org/gnome/desktop/screensaver]
-picture-uri='file:///usr/share/backgrounds/default-login.png'
+picture-uri='file:///usr/share/backgrounds/default-login.jpg'
 
 
 __EOF__
