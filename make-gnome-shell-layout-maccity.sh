@@ -396,22 +396,6 @@ default-visible-columns=['name', 'size', 'date_modified', 'starred']
 default-zoom-level='medium'
 
 
-[org/gtk/gtk4/Settings/FileChooser]
-expand-folders=false
-show-hidden=true
-sort-column='name'
-sort-directories-first=true
-sort-order='ascending'
-
-
-[org/gtk/Settings/FileChooser]
-expand-folders=false
-show-hidden=true
-sort-column='name'
-sort-directories-first=true
-sort-order='ascending'
-
-
 [org/gtk/gtk4/settings/file-chooser]
 expand-folders=false
 show-hidden=true
