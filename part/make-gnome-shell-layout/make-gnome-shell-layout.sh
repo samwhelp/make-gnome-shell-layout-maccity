@@ -29,7 +29,7 @@ REF_GNOME_SHELL_EXTENSIONS_INSTALL=(
 	"date-menu-formatter@marcinjakubowski.github.com"
 	"user-theme@gnome-shell-extensions.gcampax.github.com"
 	"status-icons@gnome-shell-extensions.gcampax.github.com"
-	"gtk4-ding@smedius.gitlab.com"
+	"ding@rastersoft.com"
 )
 
 
@@ -42,7 +42,7 @@ REF_GNOME_SHELL_EXTENSIONS_ENABLE=(
 	"date-menu-formatter@marcinjakubowski.github.com"
 	"user-theme@gnome-shell-extensions.gcampax.github.com"
 	"status-icons@gnome-shell-extensions.gcampax.github.com"
-	"gtk4-ding@smedius.gitlab.com"
+	"ding@rastersoft.com"
 )
 
 
