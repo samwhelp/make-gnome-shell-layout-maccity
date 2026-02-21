@@ -1778,7 +1778,7 @@ __EOF__
 
 portal_gnome_shell_install () {
 
-	mod_package_master_install
+	portal_gnome_shell_prepare_install
 
 	portal_gnome_shell_master_install
 
