@@ -46,6 +46,14 @@ REF_MASTER_STYLE="${REF_MASTER_STYLE:=$DEFAULT_MASTER_STYLE}"
 
 portal_tool_install () {
 
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_tool_install"
+	echo "##"
+	echo
+	echo
+
 	mod_tool_package_install
 
 	mod_tool_config_install

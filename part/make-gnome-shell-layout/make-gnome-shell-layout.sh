@@ -121,6 +121,14 @@ is_command_exist () {
 
 portal_gnome_shell_layout_install () {
 
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_layout_install"
+	echo "##"
+	echo
+	echo
+
 	mod_gnome_shell_layout_install_prerun
 
 	mod_gnome_shell_layout_install_mainrun
@@ -146,7 +154,7 @@ mod_gnome_shell_layout_install_prerun () {
 
 }
 
-mod_gnome_shell_layout_install_posrun () {
+mod_gnome_shell_layout_install_mainrun () {
 
 	sys_gnome_shell_extensions_install
 
@@ -160,7 +168,7 @@ mod_gnome_shell_layout_install_posrun () {
 
 }
 
-mod_gnome_shell_layout_install_posrun () {
+mod_gnome_shell_layout_install_postrun () {
 
 	return 0
 
