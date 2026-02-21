@@ -11,8 +11,8 @@
 ##
 ## ## Link
 ##
-## * https://github.com/samwhelp/make-gnome-shell-layout-maccity/blob/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
-## * https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
+## * https://github.com/samwhelp/make-gnome-shell-layout-wincity/blob/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
+## * https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-wincity/refs/heads/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
 ##
 
 
@@ -54,8 +54,39 @@ portal_gnome_shell_prepare_install () {
 	echo
 	echo
 
+	mod_package_install
 
 	return 0
+}
+
+
+
+
+##
+## ## Model / Package
+##
+
+mod_package_install () {
+
+	sys_package_install
+
+	sys_package_remove
+
+}
+
+sys_package_install () {
+
+	echo
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+
+}
+
+sys_package_remove () {
+
+	return 0
+
 }
 
 

@@ -118,8 +118,23 @@ is_command_exist () {
 
 
 ##
-## ## Model
+## ## Portal / Prepare
 ##
+
+portal_gnome_shell_prepare_install () {
+
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_prepare_install"
+	echo "##"
+	echo
+	echo
+
+	mod_package_install
+
+	return 0
+}
 
 
 
@@ -128,7 +143,7 @@ is_command_exist () {
 ## ## Model / Package
 ##
 
-mod_package_master_install () {
+mod_package_install () {
 
 	sys_package_install
 
