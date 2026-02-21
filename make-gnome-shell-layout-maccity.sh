@@ -374,6 +374,14 @@ sys_theme_install_wallpaper () {
 
 portal_tool_install () {
 
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_tool_install"
+	echo "##"
+	echo
+	echo
+
 	mod_tool_package_install
 
 	mod_tool_config_install
