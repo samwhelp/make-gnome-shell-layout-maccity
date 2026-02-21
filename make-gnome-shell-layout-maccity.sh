@@ -1626,6 +1626,18 @@ __EOF__
 
 
 ##
+## ## Portal / Tips
+##
+
+portal_tips_on_done () {
+
+	sys_tips_on_done
+
+	return 0
+}
+
+
+##
 ## ## Model / Tips
 ##
 
@@ -1647,6 +1659,8 @@ cat << __EOF__
 ## \`\`\` sh
 ## gnome-session-quit
 ## \`\`\`
+##
+## or just 'Alt + Shfit + x' to Logout.
 ##
 ## Please check.
 ##
@@ -1687,7 +1701,7 @@ portal_gnome_shell_install () {
 
 	mod_theme_master_install
 
-	sys_tips_on_done
+	portal_tips_on_done
 
 }
 
