@@ -11,6 +11,9 @@
 ##
 ## ## Link
 ##
+## * https://github.com/samwhelp/make-gnome-shell-layout-maccity/blob/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
+## * https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/part/make-gnome-shell-prepare/make-gnome-shell-prepare.sh
+##
 
 
 
