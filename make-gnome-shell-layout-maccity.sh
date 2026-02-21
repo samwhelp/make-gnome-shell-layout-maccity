@@ -1227,7 +1227,185 @@ mod_gnome_shell_master_config_install () {
 
 
 ##
-## ## Model / Extension
+## ## Portal / Layout
+##
+
+portal_gnome_shell_layout_install () {
+
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_layout_install"
+	echo "##"
+	echo
+	echo
+
+	mod_gnome_shell_layout_install_prerun
+
+	mod_gnome_shell_layout_install_mainrun
+
+	mod_gnome_shell_layout_install_postrun
+
+}
+
+
+
+
+##
+## ## Model / Layout
+##
+
+mod_gnome_shell_layout_install_prerun () {
+
+	mod_python_pipx_install
+
+	mod_gnome_shell_extensions_cli_install
+
+	return 0
+
+}
+
+mod_gnome_shell_layout_install_mainrun () {
+
+	sys_gnome_shell_extensions_install
+
+	sys_gnome_shell_extensions_enable
+
+	sys_gnome_shell_extensions_disable
+
+	sys_gnome_shell_extensions_config
+
+	return 0
+
+}
+
+mod_gnome_shell_layout_install_postrun () {
+
+	return 0
+
+}
+
+
+
+
+##
+## ## Model / Pipx
+##
+
+mod_python_pipx_install () {
+
+	if is_command_exist pipx; then
+
+		return
+
+	fi
+
+	sys_python_pipx_install
+
+}
+
+sys_python_pipx_install () {
+
+	local the_distro="${REF_MASTER_DISTRO}"
+
+	local the_delegate="sys_python_pipx_install_for_${the_distro}"
+
+
+	if ! is_function_exist "${the_delegate}"; then
+		return 0
+	fi
+
+
+	"${the_delegate}"
+
+
+	return 0
+}
+
+sys_python_pipx_install_for_ubuntu () {
+
+	echo
+	echo sudo apt-get install -y pipx
+	echo
+	sudo apt-get install -y pipx
+
+}
+
+sys_python_pipx_install_for_debian () {
+
+	echo
+	echo sudo apt-get install -y pipx
+	echo
+	sudo apt-get install -y pipx
+
+}
+
+sys_python_pipx_install_for_fedora () {
+
+	echo
+	echo sudo dnf install pipx
+	echo
+	sudo dnf install pipx
+
+}
+
+sys_python_pipx_install_for_archlinux () {
+
+	echo
+	echo sudo pacman -Sy --needed python-pipx
+	echo
+	sudo pacman -Sy --needed python-pipx
+
+}
+
+sys_python_pipx_install_for_voidlinux () {
+
+	echo
+	echo sudo xbps-install -Su python3-pipx
+	echo
+	sudo xbps-install -Su python3-pipx
+
+}
+
+
+
+
+##
+## ## Model / Gext
+##
+
+mod_gnome_shell_extensions_cli_install () {
+
+	if is_command_exist gext; then
+
+		return
+
+	fi
+
+	sys_gnome_shell_extensions_cli_install
+
+}
+
+sys_gnome_shell_extensions_cli_install () {
+
+	sys_gnome_shell_extensions_cli_install_via_pipx
+
+}
+
+sys_gnome_shell_extensions_cli_install_via_pipx () {
+
+	echo
+	echo sudo pipx install gnome-extensions-cli --global
+	echo
+	sudo pipx install gnome-extensions-cli --global
+
+}
+
+
+
+
+##
+## ## Model / Layout / Gnome Shell Extension
 ##
 
 sys_gnome_shell_extensions_install () {
@@ -1289,7 +1467,7 @@ sys_gnome_shell_extensions_disable () {
 
 
 ##
-## ## Model / Config
+## ## Model / Layout / Gnome Shell Extension / Config
 ##
 
 sys_gnome_shell_extensions_config () {
@@ -1399,7 +1577,7 @@ menu-item-grid-icon-size='Default'
 menu-item-icon-size='Large'
 menu-layout='Whisker'
 override-menu-theme=false
-position-in-panel='Left'
+position-in-panel='Center'
 prefs-visible-page=0
 searchbar-default-top-location='Bottom'
 show-activities-button=true
@@ -1439,97 +1617,10 @@ __EOF__
 
 
 ##
-## ## Model / Gext
 ##
-
-mod_gnome_shell_extensions_cli_install () {
-
-	if is_command_exist gext; then
-
-		return
-
-	fi
-
-	sys_gnome_shell_extensions_cli_install
-
-}
-
-sys_gnome_shell_extensions_cli_install () {
-
-	sys_gnome_shell_extensions_cli_install_via_pipx
-
-}
-
-sys_gnome_shell_extensions_cli_install_via_pipx () {
-
-	sudo pipx install gnome-extensions-cli --global
-
-}
-
-
-
-
+################################################################################
 ##
-## ## Model / Pipx
 ##
-
-mod_python_pipx_install () {
-
-	if is_command_exist pipx; then
-
-		return
-
-	fi
-
-	sys_python_pipx_install
-
-}
-
-sys_python_pipx_install () {
-
-	#sys_python_pipx_install_for_ubuntu
-
-	sys_python_pipx_install_for_debian
-
-	#sys_python_pipx_install_for_fedora
-
-	#sys_python_pipx_install_for_archlinux
-
-	#sys_python_pipx_install_for_voidlinux
-
-
-	return 0
-}
-
-sys_python_pipx_install_for_ubuntu () {
-
-	sudo apt-get install -y pipx
-
-}
-
-sys_python_pipx_install_for_debian () {
-
-	sudo apt-get install -y pipx
-
-}
-
-sys_python_pipx_install_for_fedora () {
-
-	sudo dnf install pipx
-
-}
-
-sys_python_pipx_install_for_archlinux () {
-
-	sudo pacman -Sy --needed python-pipx
-
-}
-
-sys_python_pipx_install_for_voidlinux () {
-
-	sudo xbps-install -Su python3-pipx
-
-}
 
 
 
@@ -1574,59 +1665,25 @@ __EOF__
 
 
 ##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Portal
 ##
 
-mod_gnome_shell_layout_install_prepare () {
-
-	mod_python_pipx_install
-
-	mod_gnome_shell_extensions_cli_install
-
-}
-
-mod_gnome_shell_layout_install_main () {
-
-	sys_gnome_shell_extensions_install
-
-	sys_gnome_shell_extensions_enable
-
-	sys_gnome_shell_extensions_disable
-
-	sys_gnome_shell_extensions_config
-
-}
-
-mod_gnome_shell_layout_install_done () {
-
-	#sys_tips_on_done
-
-	return 0
-}
-
-mod_gnome_shell_layout_install () {
-
-	mod_gnome_shell_layout_install_prepare
-
-	mod_gnome_shell_layout_install_main
-
-	mod_gnome_shell_layout_install_done
-
-}
-
-mod_gnome_shell_master_layout_install () {
-
-	mod_gnome_shell_layout_install
-
-}
-
-mod_gnome_shell_master_install () {
+portal_gnome_shell_install () {
 
 	mod_package_master_install
 
 	mod_gnome_shell_master_config_install
 
-	mod_gnome_shell_master_layout_install
+	portal_gnome_shell_layout_install
 
 	mod_theme_master_install
 
@@ -1641,7 +1698,7 @@ mod_gnome_shell_master_install () {
 
 __main__ () {
 
-	mod_gnome_shell_master_install
+	portal_gnome_shell_install
 
 }
 
