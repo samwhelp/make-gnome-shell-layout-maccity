@@ -32,6 +32,15 @@ REF_MASTER_STYLE="${REF_MASTER_STYLE:=$DEFAULT_MASTER_STYLE}"
 
 
 ##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Portal / Tool
 ##
 
@@ -433,6 +442,15 @@ dock-items=['thunar.dockitem', 'org.xfce.mousepad.dockitem', 'firefox.dockitem',
 __EOF__
 
 }
+
+
+
+
+##
+##
+################################################################################
+##
+##
 
 
 
