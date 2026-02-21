@@ -360,7 +360,35 @@ sys_theme_install_wallpaper () {
 
 
 ##
-## ## Model / Tool
+## ## Portal / Tool
+##
+
+portal_tool_install () {
+
+	mod_tool_package_install
+
+	mod_tool_config_install
+
+	return 0
+}
+
+
+
+
+##
+## ## Model / Tool / Package
+##
+
+mod_tool_package_install () {
+
+	return 0
+}
+
+
+
+
+##
+## ## Model / Tool / Config
 ##
 
 mod_tool_config_install () {
@@ -1165,7 +1193,7 @@ mod_gnome_shell_master_config_install_main () {
 
 	mod_gnome_shell_keybind_config_install
 
-	mod_tool_config_install
+	portal_tool_install
 
 }
 
