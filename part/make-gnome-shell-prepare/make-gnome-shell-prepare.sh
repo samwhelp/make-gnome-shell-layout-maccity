@@ -46,8 +46,16 @@ REF_MASTER_STYLE="${REF_MASTER_STYLE:=$DEFAULT_MASTER_STYLE}"
 
 portal_gnome_shell_prepare_install () {
 
-	echo portal_gnome_shell_prepare_install
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_prepare_install"
+	echo "##"
+	echo
+	echo
 
+
+	return 0
 }
 
 
