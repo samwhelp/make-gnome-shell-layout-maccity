@@ -299,7 +299,7 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 sys_theme_install_wallpaper () {
 
 
-	if [ -e "/usr/share/backgrounds/Fluent-building-night.png" ]; then
+	if [ -e "/usr/share/backgrounds/MacTahoe-Dark.jpeg" ]; then
 		return 0
 	fi
 
