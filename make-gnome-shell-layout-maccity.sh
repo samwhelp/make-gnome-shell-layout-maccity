@@ -164,10 +164,32 @@ sys_package_remove () {
 
 
 ##
+## ## Portal / Style
+##
+
+portal_gnome_shell_style_install () {
+
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_style_install"
+	echo "##"
+	echo
+	echo
+
+	mod_theme_install
+
+	return 0
+}
+
+
+
+
+##
 ## ## Model / Theme
 ##
 
-mod_theme_master_install () {
+mod_theme_install () {
 
 	sys_theme_install_wallpaper
 
@@ -1751,7 +1773,7 @@ portal_gnome_shell_install () {
 
 	portal_gnome_shell_layout_install
 
-	mod_theme_master_install
+	portal_gnome_shell_style_install
 
 	portal_tips_on_done
 
