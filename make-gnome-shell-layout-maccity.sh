@@ -792,7 +792,29 @@ __EOF__
 
 
 ##
-## ## Model / Gnome Shell / Main
+## ## Portal / Master
+##
+
+portal_gnome_shell_master_install () {
+
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_master_install"
+	echo "##"
+	echo
+	echo
+
+	mod_gnome_shell_main_config_install
+
+	return 0
+}
+
+
+
+
+##
+## ## Model / Master / Gnome Shell
 ##
 
 mod_gnome_shell_main_config_install () {
@@ -971,7 +993,29 @@ __EOF__
 
 
 ##
-## ## Model / Gnome Shell / Keybind
+## ## Portal / Keybind
+##
+
+portal_gnome_shell_keybind_install () {
+
+	echo
+	echo
+	echo "##"
+	echo "## ## portal_gnome_shell_keybind_install"
+	echo "##"
+	echo
+	echo
+
+	mod_gnome_shell_keybind_config_install
+
+	return 0
+}
+
+
+
+
+##
+## ## Model / Keybind / Gnome Shell
 ##
 
 mod_gnome_shell_keybind_config_install () {
@@ -1206,44 +1250,6 @@ name='Web_Browser'
 
 
 __EOF__
-
-}
-
-
-
-
-##
-## ## Portal
-##
-
-mod_gnome_shell_master_config_install_prepare () {
-
-	return 0
-
-}
-
-mod_gnome_shell_master_config_install_main () {
-
-	mod_gnome_shell_main_config_install
-
-	mod_gnome_shell_keybind_config_install
-
-}
-
-mod_gnome_shell_master_config_install_done () {
-
-	#sys_tips_on_done
-
-	return 0
-}
-
-mod_gnome_shell_master_config_install () {
-
-	mod_gnome_shell_master_config_install_prepare
-
-	mod_gnome_shell_master_config_install_main
-
-	mod_gnome_shell_master_config_install_done
 
 }
 
@@ -1728,7 +1734,9 @@ portal_gnome_shell_install () {
 
 	mod_package_master_install
 
-	mod_gnome_shell_master_config_install
+	portal_gnome_shell_master_install
+
+	portal_gnome_shell_keybind_install
 
 	portal_tool_install
 
