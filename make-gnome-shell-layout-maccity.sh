@@ -1193,8 +1193,6 @@ mod_gnome_shell_master_config_install_main () {
 
 	mod_gnome_shell_keybind_config_install
 
-	portal_tool_install
-
 }
 
 mod_gnome_shell_master_config_install_done () {
@@ -1696,6 +1694,8 @@ portal_gnome_shell_install () {
 	mod_package_master_install
 
 	mod_gnome_shell_master_config_install
+
+	portal_tool_install
 
 	portal_gnome_shell_layout_install
 
