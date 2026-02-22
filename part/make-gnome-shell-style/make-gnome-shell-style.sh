@@ -32,6 +32,41 @@ REF_MASTER_STYLE="${REF_MASTER_STYLE:=$DEFAULT_MASTER_STYLE}"
 
 
 ##
+## ## Util / Command
+##
+
+is_function_exist () {
+
+	if type -p "${1}" > /dev/null; then
+		return 0
+	else
+		return 1
+	fi
+
+}
+
+# is_command_exist () {
+# 	if command -v "${1}" > /dev/null; then
+# 		return 0
+# 	else
+# 		return 1
+# 	fi
+# }
+
+is_command_exist () {
+
+	if [ -x "$(command -v ${1})" ]; then
+		return 0
+	else
+		return 1
+	fi
+
+}
+
+
+
+
+##
 ##
 ################################################################################
 ##
