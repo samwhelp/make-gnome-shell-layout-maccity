@@ -239,7 +239,7 @@ mod_style_install () {
 ## ## Model / Wallpaper
 ##
 
-sys_wallpaper_install () {
+sys_wallpaper_install_for_default () {
 
 	#sys_wallpaper_install_for_wincity
 
@@ -257,11 +257,47 @@ sys_wallpaper_install () {
 
 sys_wallpaper_install_for_wincity () {
 
+	sys_wallpaper_asset_install_for_wincity
 
-	## config via dconf
-	dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.png'"
-	dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.png'"
-	dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.png'"
+	sys_wallpaper_config_install_for_wincity
+
+}
+
+sys_wallpaper_config_install_for_wincity () {
+
+
+	## config via gsettings set
+	#gsettings set org.gnome.desktop.background picture-uri "'/usr/share/backgrounds/default.jpeg'"
+	#gsettings set org.gnome.desktop.background picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
+	#gsettings set org.gnome.desktop.screensaver picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+
+
+	## config via dconf write
+	#dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpeg'"
+	#dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
+	#dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+
+
+	## config via dconf load
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/default.png'
+picture-uri-dark='file:///usr/share/backgrounds/default.png'
+
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/default-login.png'
+
+
+__EOF__
+
+}
+
+sys_wallpaper_asset_install_for_wincity () {
 
 
 	if [ -e "/usr/share/backgrounds/Fluent-round-dark.png" ]; then
@@ -309,11 +345,47 @@ sys_wallpaper_install_for_wincity () {
 
 sys_wallpaper_install_for_maccity () {
 
+	sys_wallpaper_asset_install_for_maccity
 
-	## config via dconf
-	dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpeg'"
-	dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
-	dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+	sys_wallpaper_config_install_for_maccity
+
+}
+
+sys_wallpaper_config_install_for_maccity () {
+
+
+	## config via gsettings set
+	#gsettings set org.gnome.desktop.background picture-uri "'/usr/share/backgrounds/default.jpeg'"
+	#gsettings set org.gnome.desktop.background picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
+	#gsettings set org.gnome.desktop.screensaver picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+
+
+	## config via dconf write
+	#dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpeg'"
+	#dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
+	#dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+
+
+	## config via dconf load
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/default.jpeg'
+picture-uri-dark='file:///usr/share/backgrounds/default.jpeg'
+
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/default-login.jpeg'
+
+
+__EOF__
+
+}
+
+sys_wallpaper_asset_install_for_maccity () {
 
 
 	if [ -e "/usr/share/backgrounds/MacTahoe-Dark.jpeg" ]; then
@@ -369,6 +441,39 @@ sys_wallpaper_install_for_maccity () {
 ##
 
 sys_style_install_for_fluent () {
+
+	sys_style_asset_install_for_fluent
+
+	sys_style_config_install_for_fluent
+
+}
+
+sys_style_config_install_for_fluent () {
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Fluent-round-Dark'
+icon-theme='Fluent-dark'
+cursor-theme='Fluent-dark-cursors'
+cursor-size=24
+
+
+[org/gnome/desktop/wm/preferences]
+theme='Fluent-round-Dark'
+
+
+[org/gnome/shell/extensions/user-theme]
+name='Fluent-round-Dark'
+
+
+__EOF__
+
+}
+
+sys_style_asset_install_for_fluent () {
 
 	sys_wallpaper_install_for_wincity
 
@@ -532,6 +637,39 @@ sys_theme_install_fluent_icon_theme_via_wget_archive () {
 
 sys_style_install_for_colloid () {
 
+	sys_style_asset_install_for_colloid
+
+	sys_style_config_install_for_colloid
+
+}
+
+sys_style_config_install_for_colloid () {
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Colloid-Dark'
+icon-theme='Colloid-Dark'
+cursor-theme='Colloid-dark-cursors'
+cursor-size=24
+
+
+[org/gnome/desktop/wm/preferences]
+theme='Colloid-Dark'
+
+
+[org/gnome/shell/extensions/user-theme]
+name='Colloid-Dark'
+
+
+__EOF__
+
+}
+
+sys_style_asset_install_for_colloid () {
+
 	sys_wallpaper_install_for_maccity
 
 	sys_theme_install_colloid_gtk_theme
@@ -673,6 +811,294 @@ sys_theme_install_colloid_icon_theme_via_wget_archive () {
 	./install.sh
 
 	cd "${OLDPWD}"
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
+## ## Model / Style / vimix
+##
+
+sys_style_install_for_vimix () {
+
+	sys_style_asset_install_for_vimix
+
+	sys_style_config_install_for_vimix
+
+}
+
+sys_style_config_install_for_vimix () {
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Vimix-dark-ruby'
+icon-theme='Citrus-red-dark'
+cursor-theme='Vimix-cursors'
+cursor-size=24
+
+
+[org/gnome/desktop/wm/preferences]
+theme='Vimix-dark-ruby'
+
+
+[org/gnome/shell/extensions/user-theme]
+name='Vimix-dark-ruby'
+
+
+__EOF__
+
+}
+
+sys_style_asset_install_for_vimix () {
+
+	sys_wallpaper_install_for_default
+
+	sys_theme_install_vimix_gtk_theme
+
+	#sys_theme_install_vimix_icon_theme
+
+	sys_theme_install_vimix_cursor_theme
+
+	sys_theme_install_citrus_icon_theme
+
+	sys_theme_install_greystone_icon_theme
+
+}
+
+sys_theme_install_vimix_gtk_theme () {
+
+	sys_theme_install_vimix_gtk_theme_via_wget_archive
+
+}
+
+sys_theme_install_vimix_gtk_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.themes/Vimix-ruby" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Vimix-gtk-themes/archive/refs/heads/master.tar.gz' -O '/tmp/Vimix-gtk-themes-master.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Vimix-gtk-themes-master.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Vimix-gtk-themes-master
+
+	./install.sh --theme all
+
+	cd "${OLDPWD}"
+
+}
+
+sys_theme_install_vimix_icon_theme () {
+
+	sys_theme_install_vimix_icon_theme_via_wget_archive
+
+}
+
+sys_theme_install_vimix_icon_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/Vimix" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Vimix-icon-theme/archive/refs/heads/master.tar.gz' -O '/tmp/Vimix-icon-theme-master.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Vimix-icon-theme-master.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Vimix-icon-theme-master
+
+	./install.sh -a
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+sys_theme_install_vimix_cursor_theme () {
+
+	sys_theme_install_vimix_cursor_theme_via_wget_archive
+
+}
+
+sys_theme_install_vimix_cursor_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/Vimix-cursors" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Vimix-cursors/archive/refs/heads/master.tar.gz' -O '/tmp/Vimix-cursors-master.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Vimix-cursors-master.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Vimix-cursors-master
+
+	./install.sh
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
+## ## Model / Icon / citrus
+##
+
+sys_theme_install_citrus_icon_theme () {
+
+	sys_theme_install_citrus_icon_theme_via_wget_archive
+
+}
+
+sys_theme_install_citrus_icon_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/Citrus-red" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/samwhelp/citrus-icon-theme/archive/refs/heads/port.tar.gz' -O '/tmp/citrus-icon-theme-port.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf citrus-icon-theme-port.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/citrus-icon-theme-port
+
+	./install.sh -red
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+
+
+
+##
+## ## Model / Icon / greystone
+##
+
+sys_theme_install_greystone_icon_theme () {
+
+	sys_theme_install_greystone_icon_theme_via_wget_archive
+
+}
+
+sys_theme_install_greystone_icon_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/GreyStone" ]; then
+		return 0
+	fi
+
+
+	mkdir -p "${HOME}/.local/share/icons"
+
+
+	wget -c 'https://github.com/samwhelp/greystone-icon-theme/archive/refs/heads/port.tar.gz' -O '/tmp/greystone-icon-theme-port.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf greystone-icon-theme-port.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/greystone-icon-theme-port
+
+	tar xf GreyStone.tar.xz
+	cp -rfT ./GreyStone "${HOME}/.local/share/icons/GreyStone"
+
+
+	tar xf GreyStone-Circle.tar.xz
+	cp -rfT ./GreyStone-Circle "${HOME}/.local/share/icons/GreyStone-Circle"
+
+	cd "${OLDPWD}"
+
+
+
 
 }
 
