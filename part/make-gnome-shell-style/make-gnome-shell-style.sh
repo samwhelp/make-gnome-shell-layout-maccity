@@ -89,7 +89,12 @@ portal_gnome_shell_style_install () {
 	echo
 	echo
 
-	mod_style_install
+	mod_gnome_shell_style_install_prerun
+
+	mod_gnome_shell_style_install_mainrun
+
+	mod_gnome_shell_style_install_postrun
+
 
 	return 0
 }
@@ -99,6 +104,105 @@ portal_gnome_shell_style_install () {
 
 ##
 ## ## Model / Style
+##
+
+mod_gnome_shell_style_install_prerun () {
+
+	mod_style_install_prepare
+
+	return 0
+
+}
+
+mod_gnome_shell_style_install_mainrun () {
+
+	mod_style_install
+
+	return 0
+
+}
+
+mod_gnome_shell_style_install_postrun () {
+
+	return 0
+
+}
+
+
+
+
+##
+## ## Model / Style / Prepare
+##
+
+mod_style_install_prepare () {
+
+	local the_distro="${REF_MASTER_DISTRO}"
+
+	local the_delegate="mod_style_install_prepare_for_${the_distro}"
+
+
+	if ! is_function_exist "${the_delegate}"; then
+		return 0
+	fi
+
+
+	"${the_delegate}"
+
+
+	return 0
+}
+
+mod_style_install_prepare_for_ubuntu () {
+
+	echo
+	echo sudo apt-get install -y git wget sassc
+	echo
+	sudo apt-get install -y git wget sassc
+
+}
+
+mod_style_install_prepare_for_debian () {
+
+	echo
+	echo sudo apt-get install -y git wget sassc
+	echo
+	sudo apt-get install -y git wget sassc
+
+}
+
+mod_style_install_prepare_for_fedora () {
+
+	echo
+	echo sudo dnf install git wget sassc
+	echo
+	sudo dnf install git wget sassc
+
+}
+
+mod_style_install_prepare_for_archlinux () {
+
+	echo
+	echo sudo pacman -Sy --needed git wget sassc
+	echo
+	sudo pacman -Sy --needed git wget sassc
+
+}
+
+mod_style_install_prepare_for_voidlinux () {
+
+	echo
+	echo sudo xbps-install -Su git wget sassc
+	echo
+	sudo xbps-install -Su git wget sassc
+
+}
+
+
+
+
+##
+## ## Model / Style / Install
 ##
 
 mod_style_install () {
