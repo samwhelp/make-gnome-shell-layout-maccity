@@ -140,18 +140,28 @@ portal_gnome_shell_prepare_install () {
 
 
 ##
-## ## Model / Package
+## ## Model / Package / Install
 ##
 
 mod_package_install () {
 
-	sys_package_install
+	local the_distro="${REF_MASTER_DISTRO}"
 
-	sys_package_remove
+	local the_delegate="sys_package_install_for_${the_distro}"
 
+
+	if ! is_function_exist "${the_delegate}"; then
+		return 0
+	fi
+
+
+	"${the_delegate}"
+
+
+	return 0
 }
 
-sys_package_install () {
+sys_package_install_for_ubuntu () {
 
 	echo
 	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
@@ -160,9 +170,39 @@ sys_package_install () {
 
 }
 
-sys_package_remove () {
+sys_package_install_for_debian () {
 
-	return 0
+	echo
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+
+}
+
+sys_package_install_for_fedora () {
+
+	echo
+	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+	echo
+	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+
+}
+
+sys_package_install_for_archlinux () {
+
+	echo
+	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo
+	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+
+}
+
+sys_package_install_for_voidlinux () {
+
+	echo
+	echo sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo
+	sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
 
 }
 
