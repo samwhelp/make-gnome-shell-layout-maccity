@@ -1595,7 +1595,7 @@ dconf load / << __EOF__
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Jasper-Dark'
-icon-theme='GreyStone-Circle'
+icon-theme='QuestX-Teal'
 cursor-theme='Vimix-cursors'
 cursor-size=24
 
