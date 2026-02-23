@@ -192,18 +192,18 @@ dconf load / << __EOF__
 
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
-gtk-theme='Colloid-Dark'
-icon-theme='Colloid-Dark'
-cursor-theme='Colloid-dark-cursors'
+gtk-theme='Adwaita-dark'
+icon-theme='Papirus-Dark'
+cursor-theme='Adwaita'
 cursor-size=24
 
 
 [org/gnome/desktop/wm/preferences]
-theme='Colloid-Dark'
+theme='Adwaita-dark'
 
 
 [org/gnome/shell/extensions/user-theme]
-name='Colloid-Dark'
+name='Adwaita-dark'
 
 
 __EOF__
