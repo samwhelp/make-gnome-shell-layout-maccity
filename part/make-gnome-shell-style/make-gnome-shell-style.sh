@@ -1205,6 +1205,243 @@ sys_theme_install_greystone_icon_theme_via_wget_archive () {
 
 
 ##
+## ## Model / Style / graphite
+##
+
+sys_style_install_for_graphite () {
+
+	sys_style_asset_install_for_graphite
+
+	sys_style_config_install_for_graphite
+
+}
+
+sys_style_config_install_for_graphite () {
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Graphite-Dark'
+icon-theme='GreyStone-Circle'
+cursor-theme='Graphite-dark-cursors'
+cursor-size=24
+
+
+[org/gnome/desktop/wm/preferences]
+theme='Graphite-Dark'
+
+
+[org/gnome/shell/extensions/user-theme]
+name='Graphite-Dark'
+
+
+__EOF__
+
+}
+
+sys_style_asset_install_for_graphite () {
+
+	sys_wallpaper_install_for_graphite
+
+	sys_theme_install_graphite_gtk_theme
+
+	sys_theme_install_graphite_cursor_theme
+
+	sys_theme_install_citrus_icon_theme
+
+	sys_theme_install_greystone_icon_theme
+
+}
+
+sys_theme_install_graphite_gtk_theme () {
+
+	sys_theme_install_graphite_gtk_theme_via_wget_archive
+
+}
+
+sys_theme_install_graphite_gtk_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.themes/Graphite" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Graphite-gtk-theme/archive/refs/heads/main.tar.gz' -O '/tmp/Graphite-gtk-theme-main.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Graphite-gtk-theme-main.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Graphite-gtk-theme-main
+
+	./install.sh --theme all
+
+	cd "${OLDPWD}"
+
+}
+
+sys_theme_install_graphite_cursor_theme () {
+
+	sys_theme_install_graphite_cursor_theme_via_wget_archive
+
+}
+
+sys_theme_install_graphite_cursor_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/Graphite-dark-cursors" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Graphite-cursors/archive/refs/heads/main.tar.gz' -O '/tmp/Graphite-cursors-main.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Graphite-cursors-main.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Graphite-cursors-main
+
+	./install.sh
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
+## ## Model / Style / jasper
+##
+
+sys_style_install_for_jasper () {
+
+	sys_style_asset_install_for_jasper
+
+	sys_style_config_install_for_jasper
+
+}
+
+sys_style_config_install_for_jasper () {
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Jasper-Dark'
+icon-theme='GreyStone-Circle'
+cursor-theme='Vimix-cursors'
+cursor-size=24
+
+
+[org/gnome/desktop/wm/preferences]
+theme='Jasper-Dark'
+
+
+[org/gnome/shell/extensions/user-theme]
+name='Jasper-Dark'
+
+
+__EOF__
+
+}
+
+sys_style_asset_install_for_jasper () {
+
+	sys_wallpaper_install_for_default
+
+	sys_theme_install_jasper_gtk_theme
+
+	sys_theme_install_vimix_cursor_theme
+
+	sys_theme_install_citrus_icon_theme
+
+	sys_theme_install_greystone_icon_theme
+
+}
+
+sys_theme_install_jasper_gtk_theme () {
+
+	sys_theme_install_jasper_gtk_theme_via_wget_archive
+
+}
+
+sys_theme_install_jasper_gtk_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.themes/Jasper" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/vinceliuice/Jasper-gtk-theme/archive/refs/heads/main.tar.gz' -O '/tmp/Jasper-gtk-theme-main.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf Jasper-gtk-theme-main.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/Jasper-gtk-theme-main
+
+	./install.sh --theme all
+
+	cd "${OLDPWD}"
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Portal
 ##
 
