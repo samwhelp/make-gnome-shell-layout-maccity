@@ -1142,6 +1142,15 @@ sys_theme_install_citrus_icon_theme_via_wget_archive () {
 
 
 ##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Model / Icon / greystone
 ##
 
@@ -1184,6 +1193,87 @@ sys_theme_install_greystone_icon_theme_via_wget_archive () {
 
 	tar xf GreyStone-Circle.tar.xz
 	cp -rfT ./GreyStone-Circle "${HOME}/.local/share/icons/GreyStone-Circle"
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
+## ## Model / Icon / questx
+##
+
+sys_theme_install_questx_icon_theme () {
+
+	sys_theme_install_questx_icon_theme_via_wget_archive
+
+}
+
+sys_theme_install_questx_icon_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/QuestX-Teal" ]; then
+		return 0
+	fi
+
+
+	mkdir -p "${HOME}/.local/share/icons"
+
+
+	wget -c 'https://github.com/samwhelp/questx-icon-theme/archive/refs/heads/port.tar.gz' -O '/tmp/questx-icon-theme-port.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf questx-icon-theme-port.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/questx-icon-theme-port
+
+
+	tar xf QuestX-Teal.tar.xz
+	cp -rfT ./QuestX-Teal "${HOME}/.local/share/icons/QuestX-Teal"
+
+
+	tar xf QuestX-Blue.tar.xz
+	cp -rfT ./QuestX-Blue "${HOME}/.local/share/icons/QuestX-Blue"
+
+
+	tar xf QuestX-Green.tar.xz
+	cp -rfT ./QuestX-Green "${HOME}/.local/share/icons/QuestX-Green"
+
+
+	tar xf QuestX-Orange.tar.xz
+	cp -rfT ./QuestX-Orange "${HOME}/.local/share/icons/QuestX-Orange"
+
+
+	tar xf QuestX-Purple.tar.xz
+	cp -rfT ./QuestX-Purple "${HOME}/.local/share/icons/QuestX-Purple"
+
+
+	tar xf QuestX-Red.tar.xz
+	cp -rfT ./QuestX-Red "${HOME}/.local/share/icons/QuestX-Red"
+
 
 	cd "${OLDPWD}"
 
@@ -1362,7 +1452,7 @@ dconf load / << __EOF__
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Jasper-Dark'
-icon-theme='GreyStone-Circle'
+icon-theme='QuestX-Teal'
 cursor-theme='Vimix-cursors'
 cursor-size=24
 
@@ -1390,6 +1480,8 @@ sys_style_asset_install_for_jasper () {
 	sys_theme_install_citrus_icon_theme
 
 	sys_theme_install_greystone_icon_theme
+
+	sys_theme_install_questx_icon_theme
 
 }
 
