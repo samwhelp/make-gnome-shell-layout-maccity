@@ -164,45 +164,45 @@ mod_package_install () {
 sys_package_install_for_ubuntu () {
 
 	echo
-	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 	echo
-	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 
 }
 
 sys_package_install_for_debian () {
 
 	echo
-	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 	echo
-	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 
 }
 
 sys_package_install_for_fedora () {
 
 	echo
-	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 	echo
-	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 
 }
 
 sys_package_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 
 sys_package_install_for_voidlinux () {
 
 	echo
-	echo sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
+	sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 
@@ -299,45 +299,45 @@ mod_style_install_prepare () {
 mod_style_install_prepare_for_ubuntu () {
 
 	echo
-	echo sudo apt-get install -y git wget sassc
+	echo sudo apt-get install -y wget sassc
 	echo
-	sudo apt-get install -y git wget sassc
+	sudo apt-get install -y wget sassc
 
 }
 
 mod_style_install_prepare_for_debian () {
 
 	echo
-	echo sudo apt-get install -y git wget sassc
+	echo sudo apt-get install -y wget sassc
 	echo
-	sudo apt-get install -y git wget sassc
+	sudo apt-get install -y wget sassc
 
 }
 
 mod_style_install_prepare_for_fedora () {
 
 	echo
-	echo sudo dnf install git wget sassc
+	echo sudo dnf install wget sassc
 	echo
-	sudo dnf install git wget sassc
+	sudo dnf install wget sassc
 
 }
 
 mod_style_install_prepare_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed git wget sassc
+	echo sudo pacman -Sy --needed wget sassc
 	echo
-	sudo pacman -Sy --needed git wget sassc
+	sudo pacman -Sy --needed wget sassc
 
 }
 
 mod_style_install_prepare_for_voidlinux () {
 
 	echo
-	echo sudo xbps-install -Su git wget sassc
+	echo sudo xbps-install -Su wget sassc
 	echo
-	sudo xbps-install -Su git wget sassc
+	sudo xbps-install -Su wget sassc
 
 }
 

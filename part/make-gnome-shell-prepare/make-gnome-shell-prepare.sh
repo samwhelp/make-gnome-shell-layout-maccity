@@ -122,45 +122,45 @@ mod_package_install () {
 sys_package_install_for_ubuntu () {
 
 	echo
-	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 	echo
-	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 
 }
 
 sys_package_install_for_debian () {
 
 	echo
-	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	echo sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 	echo
-	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 git wget sassc
+	sudo apt-get install -y gnome-shell gnome-tweaks gnome-shell-extension-manager gir1.2-gmenu-3.0 wget sassc
 
 }
 
 sys_package_install_for_fedora () {
 
 	echo
-	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 	echo
-	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus git wget sassc
+	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 
 }
 
 sys_package_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus git wget sassc
+	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 
 sys_package_install_for_voidlinux () {
 
 	echo
-	echo sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
+	echo sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus git wget sassc
+	sudo xbps-install -Su gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 
