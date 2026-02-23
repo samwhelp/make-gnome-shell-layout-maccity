@@ -1486,6 +1486,8 @@ sys_style_asset_install_for_graphite () {
 
 	sys_theme_install_greystone_icon_theme
 
+	sys_theme_install_questx_icon_theme
+
 }
 
 sys_theme_install_graphite_gtk_theme () {
