@@ -384,11 +384,101 @@ mod_style_install () {
 
 sys_wallpaper_install_for_default () {
 
+	sys_wallpaper_install_for_graphite
+
 	#sys_wallpaper_install_for_wincity
 
-	sys_wallpaper_install_for_maccity
+	#sys_wallpaper_install_for_maccity
 
 	return 0
+}
+
+
+
+
+##
+## ## Model / Wallpaper / graphite
+##
+
+sys_wallpaper_install_for_graphite () {
+
+	sys_wallpaper_asset_install_for_graphite
+
+	sys_wallpaper_config_install_for_graphite
+
+}
+
+sys_wallpaper_config_install_for_graphite () {
+
+
+	## config via gsettings set
+	#gsettings set org.gnome.desktop.background picture-uri "'/usr/share/backgrounds/default.jpg'"
+	#gsettings set org.gnome.desktop.background picture-uri-dark "'/usr/share/backgrounds/default.jpg'"
+	#gsettings set org.gnome.desktop.screensaver picture-uri "'/usr/share/backgrounds/default-login.jpg'"
+
+
+	## config via dconf write
+	#dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpg'"
+	#dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpg'"
+	#dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpg'"
+
+
+	## config via dconf load
+
+dconf load / << __EOF__
+
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/default.jpg'
+picture-uri-dark='file:///usr/share/backgrounds/default.jpg'
+
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/default-login.jpg'
+
+
+__EOF__
+
+}
+
+sys_wallpaper_asset_install_for_graphite () {
+
+
+	if [ -e "/usr/share/backgrounds/wave-Dark.jpg" ]; then
+		return 0
+	fi
+
+
+	echo
+	echo sudo mkdir -p "/usr/share/backgrounds"
+	echo
+	sudo mkdir -p "/usr/share/backgrounds"
+
+
+	cd "/usr/share/backgrounds"
+
+
+	echo
+	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Graphite-gtk-theme/refs/heads/main/wallpaper/wallpapers/wave-Dark.jpg" -O "./wave-Dark.jpg"
+	echo
+	sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Graphite-gtk-theme/refs/heads/main/wallpaper/wallpapers/wave-Dark.jpg" -O "./wave-Dark.jpg"
+
+
+	echo
+	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Graphite-gtk-theme/refs/heads/main/wallpaper/wallpapers/wave-Light.jpg" -O "./wave-Light.jpg"
+	echo
+	sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Graphite-gtk-theme/refs/heads/main/wallpaper/wallpapers/wave-Light.jpg" -O "./wave-Light.jpg"
+
+
+	sudo ln -sf wave-Dark.jpg next.jpg
+	sudo ln -sf next.jpg default.jpg
+	sudo ln -sf next.jpg default-login.jpg
+	sudo ln -sf next.jpg default-grub.jpg
+
+
+	cd "${OLDPWD}"
+
 }
 
 
@@ -410,15 +500,15 @@ sys_wallpaper_config_install_for_wincity () {
 
 
 	## config via gsettings set
-	#gsettings set org.gnome.desktop.background picture-uri "'/usr/share/backgrounds/default.jpeg'"
-	#gsettings set org.gnome.desktop.background picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
-	#gsettings set org.gnome.desktop.screensaver picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+	#gsettings set org.gnome.desktop.background picture-uri "'/usr/share/backgrounds/default.png'"
+	#gsettings set org.gnome.desktop.background picture-uri-dark "'/usr/share/backgrounds/default.png'"
+	#gsettings set org.gnome.desktop.screensaver picture-uri "'/usr/share/backgrounds/default-login.png'"
 
 
 	## config via dconf write
-	#dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.jpeg'"
-	#dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.jpeg'"
-	#dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.jpeg'"
+	#dconf write /org/gnome/desktop/background/picture-uri "'/usr/share/backgrounds/default.png'"
+	#dconf write /org/gnome/desktop/background/picture-uri-dark "'/usr/share/backgrounds/default.png'"
+	#dconf write /org/gnome/desktop/screensaver/picture-uri "'/usr/share/backgrounds/default-login.png'"
 
 
 	## config via dconf load
@@ -464,7 +554,7 @@ sys_wallpaper_asset_install_for_wincity () {
 
 
 	echo
-	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/MacTahoe-kde/refs/heads/main/wallpapers/MacTahoe-Light/contents/images/3840x2160.jpeg" -O "./Fluent-round-light.png"
+	echo sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Fluent-kde/refs/heads/main/wallpaper/Fluent-round-light/contents/images/3840x2160.png" -O "./Fluent-round-light.png"
 	echo
 	sudo wget -c "https://raw.githubusercontent.com/vinceliuice/Fluent-kde/refs/heads/main/wallpaper/Fluent-round-light/contents/images/3840x2160.png" -O "./Fluent-round-light.png"
 
