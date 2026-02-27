@@ -14,7 +14,10 @@
 * [Requirement](https://github.com/samwhelp/make-gnome-shell-layout-maccity/tree/main/docs/requirement)
 * [Keybind](https://github.com/samwhelp/make-gnome-shell-layout-maccity/blob/main/docs/keybind.md)
 * [Usage](#usage)
+* [Option](#option)
 * [Extension](#extension)
+* [Link](#link)
+* [Related Projects](#related-projects)
 
 
 
@@ -55,6 +58,76 @@ bash -c "$(wget -q https://raw.githubusercontent.com/samwhelp/make-gnome-shell-l
 ```
 
 
+### Basic
+
+> default
+
+``` sh
+./make-gnome-shell-layout-maccity.sh
+```
+
+
+> Option: [REF_MASTER_DISTRO](#option--ref_master_distro)
+
+* execute local script
+
+``` sh
+REF_MASTER_DISTRO=archlinux ./make-gnome-shell-layout-maccity.sh
+```
+
+* execute remote script
+
+``` sh
+REF_MASTER_DISTRO=archlinux bash <(curl -L https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh)
+```
+
+
+> Option: [REF_MASTER_STYLE](#option--ref_master_style)
+
+* execute local script
+
+``` sh
+REF_MASTER_STYLE=jasper ./make-gnome-shell-layout-maccity.sh
+```
+
+* execute remote script
+
+``` sh
+REF_MASTER_STYLE=jasper bash <(curl -L https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh)
+```
+
+
+
+
+## Option
+
+
+### Option / REF_MASTER_DISTRO
+
+| REF_MASTER_DISTRO   |
+| ------------------- |
+| `debian` (default)  |
+| `ubuntu`            |
+| `fedora`            |
+| `archlinux`         |
+| `voidlinux`         |
+
+
+### Option / REF_MASTER_STYLE
+
+| REF_MASTER_STYLE    |
+| ------------------- |
+| `colloid` (default) |
+| `fluent`            |
+| `jasper`            |
+| `graphite`          |
+| `vimix`             |
+| `orchis`            |
+| `layan`             |
+| `lavanda`           |
+| `qogir`             |
+
+
 
 
 ## Extension
@@ -72,3 +145,27 @@ bash -c "$(wget -q https://raw.githubusercontent.com/samwhelp/make-gnome-shell-l
 
 
 
+
+## Link
+
+| Link | GitHub |
+| ---- | ------ |
+| [gnome-shell-enhance](https://samwhelp.github.io/gnome-shell-enhance/) | [GitHub](https://github.com/samwhelp/gnome-shell-enhance) |
+| [gnome-shell-adjustment](https://samwhelp.github.io/gnome-shell-adjustment/) | [GitHub](https://github.com/samwhelp/gnome-shell-adjustment) |
+
+
+
+
+## Related Projects
+
+| Link | GitHub |
+| ---- | ------ |
+| [make-gnome-shell-layout-wincity](https://samwhelp.github.io/make-gnome-shell-layout-wincity/) | [GitHub](https://github.com/samwhelp/make-gnome-shell-layout-wincity) |
+| [make-gnome-shell-layout-maccity](https://samwhelp.github.io/make-gnome-shell-layout-maccity/) | [GitHub](https://github.com/samwhelp/make-gnome-shell-layout-maccity) |
+
+
+
+
+## Samwhelp
+
+* [GitHub](https://github.com/samwhelp)
