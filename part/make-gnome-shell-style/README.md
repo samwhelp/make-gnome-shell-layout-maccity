@@ -103,7 +103,7 @@ REF_MASTER_STYLE=jasper bash <(curl -L https://raw.githubusercontent.com/samwhel
 | `archlinux`         |
 | `voidlinux`         |
 
-> We can use `REF_MASTER_DISTRO=any' to skip the step of installing required packages.
+> We can use `REF_MASTER_DISTRO=any` to skip the step of installing required packages.
 
 
 ### Option / REF_MASTER_STYLE
