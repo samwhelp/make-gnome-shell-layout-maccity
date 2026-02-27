@@ -4,5 +4,5 @@
 
 | Docs |
 | ---- |
-| [Requirement](Requirement) |
+| [Requirement](requirement) |
 | [Keybind](keybind.md) |
