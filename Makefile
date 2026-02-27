@@ -34,42 +34,42 @@ style-default:
 
 
 style-jasper:
-	REF_MASTER_STYLE=jasper ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=jasper ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-jasper
 
 
 style-fluent:
-	REF_MASTER_STYLE=fluent ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=fluent ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-fluent
 
 
 style-colloid:
-	REF_MASTER_STYLE=colloid ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=colloid ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-colloid
 
 
 style-vimix:
-	REF_MASTER_STYLE=vimix ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=vimix ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-vimix
 
 
 style-orchis:
-	REF_MASTER_STYLE=orchis ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=orchis ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-orchis
 
 
 style-layan:
-	REF_MASTER_STYLE=layan ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=layan ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-layan
 
 
 style-lavanda:
-	REF_MASTER_STYLE=lavanda ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=lavanda ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-orchis
 
 
 style-qogir:
-	REF_MASTER_STYLE=qogir ./make-gnome-shell-layout-maccity.sh
+	REF_MASTER_DISTRO=any REF_MASTER_STYLE=qogir ./make-gnome-shell-layout-maccity.sh
 .PHONY: style-orchis
 
 
