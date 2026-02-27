@@ -19,6 +19,7 @@
 * [Requirement](https://github.com/samwhelp/make-gnome-shell-layout-maccity/tree/main/docs/requirement)
 * [Keybind](https://github.com/samwhelp/make-gnome-shell-layout-maccity/blob/main/docs/keybind.md)
 * [Usage](#usage)
+* [Option](#option)
 * [Extension](#extension)
 
 
@@ -58,6 +59,76 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/samwhelp/make-gnome-shel
 ``` sh
 bash -c "$(wget -q https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh -O - || curl -fsSL https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh)"
 ```
+
+
+### Basic
+
+> default
+
+``` sh
+./make-gnome-shell-layout-maccity.sh
+```
+
+
+> Option: [REF_MASTER_DISTRO](#option--ref_master_distro)
+
+* execute local script
+
+``` sh
+REF_MASTER_DISTRO=archlinux ./make-gnome-shell-layout-maccity.sh
+```
+
+* execute remote script
+
+``` sh
+REF_MASTER_DISTRO=archlinux bash <(curl -L https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh)
+```
+
+
+> Option: [REF_MASTER_STYLE](#option--ref_master_style)
+
+* execute local script
+
+``` sh
+REF_MASTER_STYLE=jasper ./make-gnome-shell-layout-maccity.sh
+```
+
+* execute remote script
+
+``` sh
+REF_MASTER_STYLE=jasper bash <(curl -L https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh)
+```
+
+
+
+
+## Option
+
+
+### Option / REF_MASTER_DISTRO
+
+| REF_MASTER_DISTRO   |
+| ------------------- |
+| `debian` (default)  |
+| `ubuntu`            |
+| `fedora`            |
+| `archlinux`         |
+| `voidlinux`         |
+
+
+### Option / REF_MASTER_STYLE
+
+| REF_MASTER_STYLE    |
+| ------------------- |
+| `colloid` (default) |
+| `fluent`            |
+| `jasper`            |
+| `graphite`          |
+| `vimix`             |
+| `orchis`            |
+| `layan`             |
+| `lavanda`           |
+| `qogir`             |
 
 
 
