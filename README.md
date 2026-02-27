@@ -22,7 +22,7 @@
 ## Usage
 
 
-## Quick Start
+### Quick Start
 
 > How to download [make-gnome-shell-layout-maccity.sh](https://github.com/samwhelp/make-gnome-shell-layout-maccity/blob/main/make-gnome-shell-layout-maccity.sh) and run [it](https://raw.githubusercontent.com/samwhelp/make-gnome-shell-layout-maccity/refs/heads/main/make-gnome-shell-layout-maccity.sh).
 
