@@ -1153,6 +1153,63 @@ sys_theme_install_citrus_icon_theme_via_wget_archive () {
 
 
 ##
+## ## Model / Icon / canta
+##
+
+sys_theme_install_canta_icon_theme () {
+
+	sys_theme_install_canta_icon_theme_via_wget_archive
+
+}
+
+sys_theme_install_canta_icon_theme_via_wget_archive () {
+
+
+	if [ -e "${HOME}/.local/share/icons/Canta-Citrus-Dark" ]; then
+		return 0
+	fi
+
+
+	wget -c 'https://github.com/samwhelp/canta-icon-theme-remix/archive/refs/heads/main.tar.gz' -O '/tmp/canta-icon-theme-remix-main.tar.gz'
+
+
+
+
+	cd /tmp
+
+	tar xf canta-icon-theme-remix-main.tar.gz
+
+	cd "${OLDPWD}"
+
+
+
+
+	cd /tmp/canta-icon-theme-remix-main
+
+	mkdir -p "${HOME}/.local/share/icons"
+
+	cp -rfT ./icons "${HOME}/.local/share/icons"
+
+	cd "${OLDPWD}"
+
+
+
+
+}
+
+
+
+
+##
+##
+################################################################################
+##
+##
+
+
+
+
+##
 ## ## Model / Icon / greystone
 ##
 
