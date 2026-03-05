@@ -1715,7 +1715,7 @@ dconf load / << __EOF__
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Layan-Dark'
-icon-theme='Citrus-red-dark'
+icon-theme='Canta-Citrus-Dark'
 cursor-theme='Vimix-cursors'
 cursor-size=24
 
