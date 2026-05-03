@@ -149,9 +149,9 @@ sys_package_install_for_fedora () {
 sys_package_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
+	echo sudo pacman -Sy --needed --noconfirm gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
+	sudo pacman -Sy --needed --noconfirm gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 

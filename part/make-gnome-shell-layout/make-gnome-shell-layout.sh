@@ -242,9 +242,9 @@ sys_python_pipx_install_for_fedora () {
 sys_python_pipx_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed python-pipx
+	echo sudo pacman -Sy --needed --noconfirm python-pipx
 	echo
-	sudo pacman -Sy --needed python-pipx
+	sudo pacman -Sy --needed --noconfirm python-pipx
 
 }
 

@@ -183,9 +183,9 @@ mod_style_install_prepare_for_fedora () {
 mod_style_install_prepare_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed wget sassc
+	echo sudo pacman -Sy --needed --noconfirm wget sassc
 	echo
-	sudo pacman -Sy --needed wget sassc
+	sudo pacman -Sy --needed --noconfirm wget sassc
 
 }
 

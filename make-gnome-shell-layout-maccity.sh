@@ -191,9 +191,9 @@ sys_package_install_for_fedora () {
 sys_package_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
+	echo sudo pacman -Sy --needed --noconfirm gnome-shell gnome-tweaks gnome-menus wget sassc
 	echo
-	sudo pacman -Sy --needed gnome-shell gnome-tweaks gnome-menus wget sassc
+	sudo pacman -Sy --needed --noconfirm gnome-shell gnome-tweaks gnome-menus wget sassc
 
 }
 
@@ -326,9 +326,9 @@ mod_style_install_prepare_for_fedora () {
 mod_style_install_prepare_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed wget sassc
+	echo sudo pacman -Sy --needed --noconfirm wget sassc
 	echo
-	sudo pacman -Sy --needed wget sassc
+	sudo pacman -Sy --needed --noconfirm wget sassc
 
 }
 
@@ -3178,9 +3178,9 @@ sys_python_pipx_install_for_fedora () {
 sys_python_pipx_install_for_archlinux () {
 
 	echo
-	echo sudo pacman -Sy --needed python-pipx
+	echo sudo pacman -Sy --needed --noconfirm python-pipx
 	echo
-	sudo pacman -Sy --needed python-pipx
+	sudo pacman -Sy --needed --noconfirm python-pipx
 
 }
 
