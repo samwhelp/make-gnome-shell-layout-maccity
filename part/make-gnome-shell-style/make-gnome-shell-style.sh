@@ -174,9 +174,9 @@ mod_style_install_prepare_for_debian () {
 mod_style_install_prepare_for_fedora () {
 
 	echo
-	echo sudo dnf install wget sassc
+	echo sudo dnf install -y wget sassc
 	echo
-	sudo dnf install wget sassc
+	sudo dnf install -y wget sassc
 
 }
 

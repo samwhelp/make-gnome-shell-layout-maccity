@@ -182,9 +182,9 @@ sys_package_install_for_debian () {
 sys_package_install_for_fedora () {
 
 	echo
-	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
+	echo sudo dnf install -y gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 	echo
-	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
+	sudo dnf install -y gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 
 }
 
@@ -317,9 +317,9 @@ mod_style_install_prepare_for_debian () {
 mod_style_install_prepare_for_fedora () {
 
 	echo
-	echo sudo dnf install wget sassc
+	echo sudo dnf install -y wget sassc
 	echo
-	sudo dnf install wget sassc
+	sudo dnf install -y wget sassc
 
 }
 
@@ -3169,9 +3169,9 @@ sys_python_pipx_install_for_debian () {
 sys_python_pipx_install_for_fedora () {
 
 	echo
-	echo sudo dnf install pipx
+	echo sudo dnf install -y pipx
 	echo
-	sudo dnf install pipx
+	sudo dnf install -y pipx
 
 }
 

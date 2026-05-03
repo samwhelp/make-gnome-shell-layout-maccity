@@ -233,9 +233,9 @@ sys_python_pipx_install_for_debian () {
 sys_python_pipx_install_for_fedora () {
 
 	echo
-	echo sudo dnf install pipx
+	echo sudo dnf install -y pipx
 	echo
-	sudo dnf install pipx
+	sudo dnf install -y pipx
 
 }
 

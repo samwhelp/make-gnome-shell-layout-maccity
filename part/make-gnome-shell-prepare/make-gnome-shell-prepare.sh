@@ -140,9 +140,9 @@ sys_package_install_for_debian () {
 sys_package_install_for_fedora () {
 
 	echo
-	echo sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
+	echo sudo dnf install -y gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 	echo
-	sudo dnf install gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
+	sudo dnf install -y gnome-shell gnome-tweaks gnome-extensions-app gnome-menus wget sassc
 
 }
 
