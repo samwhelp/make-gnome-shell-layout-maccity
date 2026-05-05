@@ -206,6 +206,15 @@ sys_package_install_for_voidlinux () {
 
 }
 
+sys_package_install_for_solus () {
+
+	echo
+	echo sudo eopkg install -y gnome-shell gnome-tweaks libgnome-menus wget sassc
+	echo
+	sudo eopkg install -y gnome-shell gnome-tweaks libgnome-menus wget sassc
+
+}
+
 
 
 
@@ -338,6 +347,15 @@ mod_style_install_prepare_for_voidlinux () {
 	echo sudo xbps-install -Su wget sassc
 	echo
 	sudo xbps-install -Su wget sassc
+
+}
+
+mod_style_install_prepare_for_solus () {
+
+	echo
+	echo ssudo eopkg install -y wget sassc
+	echo
+	sudo eopkg install -y wget sassc
 
 }
 
@@ -3190,6 +3208,15 @@ sys_python_pipx_install_for_voidlinux () {
 	echo sudo xbps-install -Su python3-pipx
 	echo
 	sudo xbps-install -Su python3-pipx
+
+}
+
+sys_python_pipx_install_for_solus () {
+
+	echo
+	echo sudo eopkg install -y pipx
+	echo
+	sudo eopkg install -y pipx
 
 }
 

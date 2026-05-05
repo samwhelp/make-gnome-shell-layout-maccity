@@ -81,6 +81,11 @@ style-qogir:
 
 
 
+distro-any:
+	REF_MASTER_DISTRO=any ./make-gnome-shell-layout-maccity.sh
+.PHONY: distro-any
+
+
 distro-ubuntu:
 	REF_MASTER_DISTRO=ubuntu ./make-gnome-shell-layout-maccity.sh
 .PHONY: distro-ubuntu
@@ -104,6 +109,11 @@ distro-archlinux:
 distro-voidlinux:
 	REF_MASTER_DISTRO=voidlinux ./make-gnome-shell-layout-maccity.sh
 .PHONY: distro-voidlinux
+
+
+distro-solus:
+	REF_MASTER_DISTRO=solus ./make-gnome-shell-layout-maccity.sh
+.PHONY: distro-solus
 
 
 
