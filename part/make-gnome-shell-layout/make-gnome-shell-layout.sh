@@ -257,6 +257,15 @@ sys_python_pipx_install_for_voidlinux () {
 
 }
 
+sys_python_pipx_install_for_solus () {
+
+	echo
+	echo sudo eopkg install -y pipx
+	echo
+	sudo eopkg install -y pipx
+
+}
+
 
 
 

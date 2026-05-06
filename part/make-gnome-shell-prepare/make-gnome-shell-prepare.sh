@@ -164,6 +164,15 @@ sys_package_install_for_voidlinux () {
 
 }
 
+sys_package_install_for_solus () {
+
+	echo
+	echo sudo eopkg install -y gnome-shell gnome-tweaks libgnome-menus wget sassc
+	echo
+	sudo eopkg install -y gnome-shell gnome-tweaks libgnome-menus wget sassc
+
+}
+
 
 
 

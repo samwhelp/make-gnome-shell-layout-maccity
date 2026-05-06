@@ -353,7 +353,7 @@ mod_style_install_prepare_for_voidlinux () {
 mod_style_install_prepare_for_solus () {
 
 	echo
-	echo ssudo eopkg install -y wget sassc
+	echo sudo eopkg install -y wget sassc
 	echo
 	sudo eopkg install -y wget sassc
 
